@@ -1,5 +1,6 @@
 # Miraibot-Plugins
 用于 MiraiBot 插件中心的仓库<br>
+(以下插件均需要MiraiBot最新版本)
 
 ## 实用性质
 `simpleat.jar`<br>

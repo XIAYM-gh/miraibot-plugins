@@ -10,3 +10,6 @@
 命令: `au`<br><br>
 
 ## 娱乐性质
+`touzi.jar`<br>
+*XIAYM* / TouZi / 能和群友van♂到一块的骰子<br>
+用法: 在q群里输入 #骰子<br><br>

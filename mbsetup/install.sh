@@ -9,6 +9,9 @@ cd miraibot
 rm ~/../usr/etc/apt/source.list.d/games.list
 rm ~/../usr/etc/apt/source.list.d/game.list
 pkg update
+rm ~/../usr/etc/apt/source.list.d/games.list
+rm ~/../usr/etc/apt/source.list.d/game.list
+pkg update
 pkg install wget tar p7zip
 echo 正在下载java 11...
 wget "https://ghproxy.com/https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.11%2B9/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.11_9.tar.gz" -O jre11.tar.gz

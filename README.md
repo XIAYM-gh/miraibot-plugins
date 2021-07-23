@@ -9,6 +9,9 @@
 `autounload.jar`<br>
 *XIAYM* / Auto Unload / 在加载完成之后异步卸载指定的插件，可以使用load <文件名>来重新加载插件<br>
 命令: `au`<br><br>
+`bcglobal.jar`<br>
+*XIAYM* / BoardCast(Global) / 用来获取Miraibot公告的插件<br>
+命令: `无，插件加载(Enable)时展示公告`<br><br>
 
 ## 娱乐性质
 `touzi.jar`<br>

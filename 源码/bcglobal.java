@@ -32,7 +32,7 @@ public class bcglobal extends Plugin{
 	public void get_bc(){
 		Thread thread2 = new Thread(() -> {
 			try{
-				loginfo(doGet("https://ghproxy.com/https://raw.githubusercontent.com/XIAYM-gh/miraibot-plugins/main/plugin_files/bc"));
+				loginfo(doGet("https://ghproxy.com/https://raw.githubusercontent.com/XIAYM-gh/miraibot-plugins/main/plugin_files/bc").replaceAll("\\n","\n"));
 			}
 			catch(Exception e){
 				e.printStackTrace();

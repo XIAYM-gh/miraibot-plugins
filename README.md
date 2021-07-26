@@ -1,6 +1,6 @@
 # Miraibot-Plugins
 用于 [MiraiBot](https://github.com/1689295608/Miraibot/) 插件中心的仓库<br>
-(以下插件均需要MiraiBot最新版本)<br>
+(以下插件均需要MiraiBot最新版本以及OpenJDK 11)<br>
 (您可以发一个issue来投稿插件)
 
 ## 实用性质

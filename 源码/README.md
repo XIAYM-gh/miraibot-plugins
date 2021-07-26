@@ -1,1 +1,2 @@
-根据Miraibot协议，所有插件源码都应开源，我们将源码放到这里。
+Uses APGL v3 Licence.<br>
+所有与Mirai有关的项目都应开源.

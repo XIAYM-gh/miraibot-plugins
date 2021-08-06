@@ -56,7 +56,7 @@ public class bcglobal extends Plugin{
 		}
 		try{
 			inputStream = httpURLConnection.getInputStream();
-			inputStreamReader = new InputStreamReader(inputStream);
+			inputStreamReader = new InputStreamReader(inputStream,"UTF-8");
 			BufferedReader dera = new BufferedReader(inputStreamReader);
 			while ((tempLine = dera.readLine()) != null) {
 				resultBuffer.append(tempLine);

@@ -2,6 +2,10 @@
 用于 [MiraiBot](https://github.com/1689295608/Miraibot/) 插件中心的仓库<br>
 (以下插件均需要MiraiBot最新版本以及OpenJDK 11)<br>
 (您可以发一个issue来投稿插件)
+<br><br>
+[pluginshop.jar](https://xiaym-gh.github.io/miraibot-plugins/pluginshop.jar)<br>
+*XIAYM* / pluginshop / 快速安装位于插件中心的插件<br>
+命令: `pluginshop`
 
 ## 实用性质
 [simpleat.jar](https://xiaym-gh.github.io/miraibot-plugins/simpleat.jar)<br>

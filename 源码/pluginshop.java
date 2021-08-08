@@ -61,6 +61,13 @@ public class pluginshop extends Plugin{
 							this.warn("缺少参数 <插件ID>");
 						 }
 						 return false;
+						case "src":
+						 if(cmds.length >= 3){
+							dlsrc(cmds[2]);
+						 }else{
+							this.warn("缺少参数 <插件ID>");
+						 }
+						 return false;
 						case "info":
 						 if(cmds.length >= 3){
 							viewplug(cmds[2]);
@@ -95,6 +102,8 @@ public class pluginshop extends Plugin{
 			this.info(" - 获取插件列表");
 			this.info("pluginshop download <插件ID>");
 			this.info(" - 下载某个插件");
+			this.info("pluginshop src <插件ID>");
+			this.info(" - 下载插件源码");
 			this.info("pluginshop info <插件ID>");
 			this.info(" - 查询插件信息");
 		}
@@ -134,6 +143,16 @@ public class pluginshop extends Plugin{
 				this.info("正在下载插件 "+getProperties(plugid+".name")+"...");
 				Download(getProperties(plugid+".download"),"plugins/",plugid+".jar");
 				this.info("已保存为: "+plugid+".jar 可使用load命令加载.");
+			}else{
+				this.warn("未找到此插件ID 请确保输入正确.");
+			}
+		}
+
+		public void dlsrc(String plugid){
+			if(!getProperties(plugid+".download").equals("")){
+				this.info("正在下载 "+getProperties(plugid+".name")+" 的源码...");
+				Download(getProperties(plugid+".src"),"plugins/"+this.getName()+"/",plugid+".java");
+				this.info("已保存到 plugins/"+this.getName()+"/"+plugid+".java");
 			}else{
 				this.warn("未找到此插件ID 请确保输入正确.");
 			}

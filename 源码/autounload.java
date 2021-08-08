@@ -12,6 +12,8 @@ import com.windowx.miraibot.PluginMain;
 
 public class autounload extends Plugin{
 	String PluginName = "AutoUnload";
+	String[] pls;
+	int aamount;
 
 	@Override public void onEnable(){
 	loginfo(PluginName+" 插件已加载!");
@@ -57,30 +59,53 @@ public class autounload extends Plugin{
 	}
 
 	public void CheckFiles(){
+		File propa = new File("plugins/"+this.getName()+"/");
 		File propfile = new File("plugins/"+this.getName()+"/config.ini");
+		if(!propa.exists()){
+			propa.mkdirs();
+		}
 		if(!propfile.exists()){
 			try{
-			this.getConfig().setProperty("unloadplugins","demo,example");
-			this.saveConfig();
-			}catch(IOException e){
+				propfile.createNewFile();
+				String defa="unloadplugins=demo,example";
+				FileOutputStream fos = new FileOutputStream(propfile);
+				fos.write(defa.getBytes());
+				fos.flush();
+				fos.close();
+				pls=defa.split(",");
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}else{
+			try{
+				BufferedReader ina = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(new File("plugins/"+this.getName()+"/config.ini"))),"UTF-8"));
+				Properties prop = new Properties();
+				prop.load(ina);
+				pls=prop.getProperty("unloadplugins","demo,example").split(",");
+			}catch(Exception e){
 				e.printStackTrace();
 			}
 		}
-		loginfo("文件检查完成，如果加载异常请删除配置文件.");
 	}
 
 	@Override public void onFinished(){
 		loginfo("开始执行动作..");
 		Thread threadunload22 = new Thread(() -> {
 		try {
-			Thread.sleep(3400);
+			Thread.sleep(250);
 		   } catch (InterruptedException e) {
 		e.printStackTrace(); 
 	        }
 		try{
-		String[] pvs = this.getConfig().getProperty("unloadplugins","demo,example").split(",");
-		for(String itm:pvs){
-			PluginMain.unloadPlugin(itm);
+		aamount=1;
+		for(String itm:pls){
+			if(PluginMain.getPlugin(itm) != null && PluginMain.getPlugin(itm).isEnabled()){
+				loginfo("("+aamount+"/"+pls.length+") 正在卸载插件: "+itm);
+				PluginMain.unloadPlugin(itm);
+			}else{
+				loginfo("("+aamount+"/"+pls.length+") 插件 "+itm+" 未加载");
+			}
+			aamount++;
 		}
 		}catch(Exception e){
 			e.printStackTrace();
